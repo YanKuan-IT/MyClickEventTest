@@ -1,2 +1,3 @@
 rootProject.name = "MyClickEventTest"
 include ':app'
+include ':mylistview'

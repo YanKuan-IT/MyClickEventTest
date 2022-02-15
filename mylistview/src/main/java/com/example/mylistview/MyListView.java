@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.widget.ListView;
 
 public class MyListView extends ListView {
+    // 上次点击的坐标
     private int mLastX, mLastY;
 
     public MyListView(Context context) {
@@ -20,9 +21,10 @@ public class MyListView extends ListView {
         super(context, attrs, defStyleAttr);
     }
 
+    // 内部拦截法
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-
+        // 当前点击的坐标
         int x = (int) ev.getX();
         int y = (int) ev.getY();
 

@@ -23,6 +23,7 @@ public class MyViewPager extends ViewPager {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
 //        return super.onInterceptTouchEvent(ev);
+        // 当为down事件的时候，不进行拦截，让子view，即ListView去处理即可，当为move事件等再拦截
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             super.onInterceptTouchEvent(ev);
             return false;
@@ -30,6 +31,7 @@ public class MyViewPager extends ViewPager {
         return true;
     }
 
+    // 外部拦截法
 //    @Override
 //    public boolean onInterceptTouchEvent(MotionEvent ev) {
 //        int x = (int) ev.getX();
